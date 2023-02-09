@@ -1,18 +1,16 @@
 #!/bin/bash
 set -e
 
-echo git 用户信息配置开始!
+echo -e "\e[33mgit 用户信息配置开始!\e[0m"
 
-echo 请输入用户名:
+echo -e "请输入用户名:\033[32;4m"
 read name
-echo 执行命令: git config user.name $name
 
-echo 请输入邮箱:
+echo -e "\033[33;24m请输入邮箱:\033[32;4m"
 read email
-echo 执行命令: git config user.name $email
 
 echo
-echo '##############################'
+echo -e '\033[0;24m##############################'
 echo
 
 echo 请核对用户信息
@@ -22,7 +20,9 @@ echo 是否执行配置操作[ Y / N ]
 read isExec
 # if [ $isExec === Y ] || [ $isExec === y ] ; then # 无输入时表达式报错
 if [ _$isExec == _Y ] || [ _$isExec == _y ] ; then # 添加一个辅助字符防止变量为空
+  echo 执行命令: git config user.name $name
   git config user.name $name
+  echo 执行命令: git config user.name $email
   git config user.email $email
   echo git 用户信息配置完成!
 else
