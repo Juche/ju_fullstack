@@ -10,12 +10,28 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 // const __dirname = path.dirname('./');
 const tempPath = path.resolve(__dirname, 'temp');
+const srcPath = path.resolve(cwd, 'src');
 const stdin = process.stdin; // 获取当前进程上的输入流
 const stdout = process.stdout; // 获取当前进程上的输出流
 
 fs.readdir(tempPath, (err, files) => {
-  function writeFile(data) {
-    console.log(`🚀 ~ writeFile ~ data`, data);
+  function writeFile(path, data) {
+    fs.writeFile(path, data, (err) => {
+      if (err) {
+        writeFailed(err);
+      } else {
+        writeSuccess();
+      }
+    });
+  }
+  function writeSuccess() {
+    console.log('写入成功!');
+  }
+  function writeFailed(err) {
+    console.log(`🚀 ~ writeFailed ~ err.toString()`, err.toString());
+  }
+  function write(data) {
+    console.log(`🚀 ~ write ~ data`, data);
     const filename = files[Number(data)];
     const filepath = tempPath + '/' + filename;
 
@@ -24,15 +40,30 @@ fs.readdir(tempPath, (err, files) => {
     } else {
       stdin.pause();
       fs.readFile(filepath, 'utf8', (err, data) => {
-        console.log(`🚀 ~ fs.readFile ~ data ${data}`);
+        console.log(`🚀 ~ fs.read ~ data ${data}`);
+
+        // cwd 项目根目录
+        // fs.readdir(cwd, (err, files) => {
+        fs.readdir(__dirname, (err, files) => {
+          if (!files.includes('temp')) {
+            fs.mkdir(tempPath, (err) => {
+              if (err) {
+                console.log(`🚀 ~ fs.mkdir ~ err.toString()`, err.toString());
+              }
+              writeFile(filepath, data + data);
+            });
+          } else {
+            writeFile(filepath, data + data);
+          }
+        });
       });
     }
   }
-  function readFile() {
+  function read() {
     stdout.write('请输入编号: ');
     stdin.resume();
     stdin.setEncoding('utf8');
-    stdin.on('data', writeFile);
+    stdin.on('data', write);
   }
   function handleFile(i) {
     const filename = files[i];
@@ -44,7 +75,7 @@ fs.readdir(tempPath, (err, files) => {
         console.log('   ' + i + '   ' + filename);
       }
       if (files.length === ++i) {
-        readFile();
+        read();
       } else {
         handleFile(i);
       }
