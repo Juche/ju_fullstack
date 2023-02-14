@@ -61,12 +61,24 @@
 
 - 在 `projects` 里分别创建 `admin` `client` `server` 三个项目
 - 在项目下分别运行 `pnpm init` 初始化项目
+- [ ] monorepo
+
+#### server
+
+- 添加依赖 `pnpm i koa`
 
 ---
 
 ## 其他问题
 
 - Linux 子系统 ip 变化的问题 => `ip addr` 结合脚本
+
+```js
+import { networkInterfaces, type } from 'node:os';
+
+const netInfo = networkInterfaces(); //网络信息
+const ip = netInfo.eth0[0].address; // Linux 系统下
+```
 
 ## 技术名词
 
