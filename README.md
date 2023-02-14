@@ -19,20 +19,31 @@
   - [ ] 持续集成
   <!-- - [ ]  -->
 
-## 技术名词
-
-- 客户端渲染 CSR（Client Side Rendering）
-- 服务器端渲染 SSR（Server Side Rendering）
-- 静态网站生成器 SSG（Static Site Generator）
-- 递增静态再生 ISR（Incremental Static Regeneration）
-
 ## 技术选型
 
-- Koa / Express / Nest / Fastify / astro/ solid /qwik
 - nuxt(vue)
 - next(react)
+- **Koa** / Express / Nest / Fastify / astro/ solid / qwik
+
+## 项目结构
+
+```sh
+.
+├── docs        # 文档
+├── packages    # 本地公共包
+│   └── cli
+├── projects
+│   ├── admin   # 管理端
+│   ├── client  # 客户端
+│   └── server  # 服务端
+└── scripts     # 公共脚本
+    ├── node
+    └── shell
+```
 
 ## 项目记录
+
+### 初始化代码仓库
 
 - [x] 初始代码仓库
 - [x] 仓库用户信息配置
@@ -46,8 +57,20 @@
 
   - [ ] node 脚本
 
-<!-- 初始化项目
+### 初始化项目
 
-`pnpm init`
+- 在 `projects` 里分别创建 `admin` `client` `server` 三个项目
+- 在项目下分别运行 `pnpm init` 初始化项目
 
-Linux 子系统 ip 变化的问题(`ip addr` 脚本解决) -->
+---
+
+## 其他问题
+
+- Linux 子系统 ip 变化的问题 => `ip addr` 结合脚本
+
+## 技术名词
+
+- 客户端渲染 CSR（Client Side Rendering）
+- 服务器端渲染 SSR（Server Side Rendering）
+- 静态网站生成器 SSG（Static Site Generator）
+- 递增静态再生 ISR（Incremental Static Regeneration）
