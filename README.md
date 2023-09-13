@@ -74,10 +74,10 @@
 - Linux 子系统 ip 变化的问题 => `ip addr` 结合脚本
 
 ```js
-import { networkInterfaces, type } from 'node:os';
+import { networkInterfaces, type } from 'node:os'
 
-const netInfo = networkInterfaces(); //网络信息
-const ip = netInfo.eth0[0].address; // Linux 系统下
+const netInfo = networkInterfaces() //网络信息
+const ip = netInfo.eth0[0].address // Linux 系统下
 ```
 
 ## 技术名词
@@ -86,3 +86,83 @@ const ip = netInfo.eth0[0].address; // Linux 系统下
 - 服务器端渲染 SSR（Server Side Rendering）
 - 静态网站生成器 SSG（Static Site Generator）
 - 递增静态再生 ISR（Incremental Static Regeneration）
+
+## 整理中
+
+### prettier eslint 配置
+
+> [Hacking Semicolons](https://slides.com/evanyou/semicolons)
+
+### vue 项目测试用例
+
+### vue hooks
+
+### node full stack
+
+### 搭建一个全栈项目
+
+- ju_fullstack
+
+  - be
+    - 数据库
+    - 网络服务
+      - 动态获取 IP (需补充 Mac 平台)
+  - fe
+    - 管理端 & 移动端(兼容旧版 => uni-app 套件)
+    - 管理端 & 移动端(现代浏览器 => vue 套件)
+      - 从 0 开始搭建一套 vue + vite + ts 项目
+      - 脚手架 `pnpm create XXX --xxx xxx`
+      - 项目管理 pnpm mono repo
+      - vue 全家桶 vue3/vue-route/pinia/vueuse
+        - SPA/MPA
+        - SSR
+        - Hash/History
+        - layout
+        - 封装 Axios
+      - 其他工具/库
+        - ts
+        - ant-design-vue
+        - Less/Scss/Tailwind
+      - 构建工具 vite
+      - 工作流
+        - 测试 vitest
+        - 网络 proxy
+        - mock
+        - husky + lint-staged
+        - 代码检查 => ESLint(使用什么规范)
+        - 代码格式化 => 项目内配置文件
+        - 项目运维：代码管理、构建管理(构建选择)、项目部署、监控告警
+        - CI/CD
+      - theme
+      - i18n
+      - env(全局项目公用)
+      - 通用开发优化
+        - 页面配置化
+        - 路由自动注册
+        - 自动注册 Svg 图标
+        - 插件/组件 => npm
+        - 指令/工具
+      - 通用交互优化
+        - 页面/表格/统计数据等 loading
+        - 常用状态页: 404
+        - 视图空占位
+        - 提交/保存/提交等按钮的状态锁
+      - 项目资源
+        - styles
+        - utils
+          - 按功能分类分文件拆分
+        - hooks
+        - components
+        - plugins
+        - iconFont
+
+### 热门 vue & node 项目参考
+
+### 其他
+
+- git
+  pro git
+  submodule
+  sparse index
+  git sparse checkout
+  git LFS
