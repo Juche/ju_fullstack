@@ -134,6 +134,19 @@ export default [
   },
 ];
 
+// resKey
+// condition, { resKey }
+// path: '/temp/:id',
+// const pageOpts = new createPage({
+// searchGroup: [
+// pageOpts.createTable({
+//   primaryKey: 't_login_log_id',
+//   getFn: getLoginLogs,
+// format: formatEnum.tmpToDay
+// type: inputEnum.select,
+// FastGPT
+// Nuxt
+
 // [路由]
 // 布局暂时分为三大类：
 // frameIn：基于 BasicLayout，通常需要登录或权限认证的路由。
