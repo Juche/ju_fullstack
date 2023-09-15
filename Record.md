@@ -15,12 +15,19 @@
     └── shell
 ```
 
-## 待办
+## TODO
 
 - [ ] 项目组织结构规划
 - [ ] pnpm mono repo 项目管理配置
 - [ ] 项目规范 & 工具选型
+  - [ ] pm2
 - [ ] node 后端库选型
+  - [ ] Express
+  - [ ] Koa
+  - [ ] Nest
+  - [ ] Egg => 基于 Koa
+  - [ ] midway => sever less
+  <!-- - [-] Meteor -->
 - [ ] 前端各端的项目搭建
   - [ ] Vue3 + 全家桶 => 浏览器
   - [ ] Nuxt(Vue SSR) => 服务端渲染
