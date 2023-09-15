@@ -103,19 +103,20 @@ const ip = netInfo.eth0[0].address // Linux 系统下
 
 - ju_fullstack
 
+  - 项目管理 pnpm mono repo
+
   - be
     - 数据库
     - 网络服务
       - 动态获取 IP (需补充 Mac 平台)
   - fe
     - 跨平台(electron/flutter/uni-app...)
-      - 浏览器、iOS、Andriod、MacOS、Linux、小程序、麒麟、UOS、TV、车载、鸿蒙?.....
+      - 浏览器、iOS、Android、MacOS、Linux、小程序、麒麟、UOS、TV、车载、鸿蒙?.....
       - **Flutter** / **Tauri** / Taro / React Native / Weex / Rax / **Electron** / Ionic / **UniApp** / Finclip
     - 管理端 & 移动端(兼容旧版 => uni-app 套件)
     - 管理端 & 移动端(现代浏览器 => vue 套件)
       - 从 0 开始搭建一套 vue + vite + ts 项目
       - 脚手架 `pnpm create XXX --xxx xxx`
-      - 项目管理 pnpm mono repo
       - vue 全家桶 vue3/vue-route/pinia/vueuse
         - SPA/MPA
         - SSR
@@ -163,6 +164,7 @@ const ip = netInfo.eth0[0].address // Linux 系统下
 
 ### 其他
 
+- 学习一个细分 & 小众方向
 - git
   pro git
   submodule
@@ -170,7 +172,7 @@ const ip = netInfo.eth0[0].address // Linux 系统下
   git sparse checkout
   git LFS
 
-- Deno / Node
+- Deno / Node / Bun
 - Rust 前端生态
   - WebAssembly
   - Tauri
