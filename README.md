@@ -31,12 +31,16 @@
 .
 ├── docs        # 文档
 ├── packages    # 本地公共包
-│   └── cli
 ├── projects
-│   ├── admin   # 管理端
-│   ├── client  # 客户端
-│   └── server  # 服务端
+│   ├── vue-admin
+│   ├── vue-h5
+│   ├── flutter
+│   ├── tauri
+│   ├── uni-app
+│   ├── electron
+│   └── node-server
 └── scripts     # 公共脚本
+    ├── cli
     ├── node
     └── shell
 ```
@@ -103,62 +107,62 @@ const ip = netInfo.eth0[0].address // Linux 系统下
 
 - ju_fullstack
 
-  - 项目管理 pnpm mono repo
+  - [ ] 项目管理 pnpm mono repo
 
-  - be
-    - 数据库
-    - 网络服务
-      - 动态获取 IP (需补充 Mac 平台)
-  - fe
-    - 跨平台(electron/flutter/uni-app...)
-      - 浏览器、iOS、Android、MacOS、Linux、小程序、麒麟、UOS、TV、车载、鸿蒙?.....
-      - **Flutter** / **Tauri** / Taro / React Native / Weex / Rax / **Electron** / Ionic / **UniApp** / Finclip
-    - 管理端 & 移动端(兼容旧版 => uni-app 套件)
-    - 管理端 & 移动端(现代浏览器 => vue 套件)
-      - 从 0 开始搭建一套 vue + vite + ts 项目
-      - 脚手架 `pnpm create XXX --xxx xxx`
-      - vue 全家桶 vue3/vue-route/pinia/vueuse
-        - SPA/MPA
-        - SSR
-        - Hash/History
-        - layout
-        - 封装 Axios
-      - 其他工具/库
-        - ts
-        - ant-design-vue
-        - Less/Scss/Tailwind
-      - 构建工具 vite
-      - 工作流
-        - 测试 vitest
-        - 网络 proxy
-        - mock
-        - husky + lint-staged
-        - 代码检查 => ESLint(使用什么规范)
-        - 代码格式化 => 项目内配置文件
-        - 项目运维：代码管理、构建管理(构建选择)、项目部署、监控告警
-        - CI/CD
-      - theme
-      - i18n
-      - env(全局项目公用)
-      - 通用开发优化
-        - 页面配置化
-        - 路由自动注册
-        - 自动注册 Svg 图标
-        - 插件/组件 => npm
-        - 指令/工具
-      - 通用交互优化
-        - 页面/表格/统计数据等 loading
-        - 常用状态页: 404
-        - 视图空占位
-        - 提交/保存/提交等按钮的状态锁
-      - 项目资源
-        - styles
-        - utils
-          - 按功能分类分文件拆分
-        - hooks
-        - components
-        - plugins
-        - iconFont
+  - [ ] be
+    - [ ] 数据库
+    - [ ] 网络服务
+      - [ ] 动态获取 IP (需补充 Mac 平台)
+  - [ ] fe
+    - [ ] 跨平台(electron/flutter/uni-app...)
+      - [ ] 浏览器、iOS、Android、MacOS、Linux、小程序、麒麟、UOS、TV、车载、鸿蒙?.....
+      - [ ] **Flutter** / **Tauri** / Taro / React Native / Weex / Rax / **Electron** / Ionic / **UniApp** / Finclip
+    - [ ] 管理端 & 移动端(兼容旧版 => uni-app 套件)
+    - [ ] 管理端 & 移动端(现代浏览器 => vue 套件)
+      - [ ] 从 0 开始搭建一套 vue + vite + ts 项目
+      - [ ] 脚手架 `pnpm create XXX --xxx xxx`
+      - [ ] vue 全家桶 vue3/vue-route/pinia/vueuse
+        - [ ] SPA/MPA
+        - [ ] SSR
+        - [ ] Hash/History
+        - [ ] layout
+        - [ ] 封装 Axios & Fetch
+      - [ ] 其他工具/库
+        - [ ] ts
+        - [ ] ant-design-vue
+        - [ ] Less/Scss/Tailwind
+      - [ ] 构建工具 vite
+      - [ ] 工作流
+        - [ ] 测试 vitest + codeQl
+        - [ ] 网络 proxy
+        - [ ] mock
+        - [ ] husky + lint-staged + eslint + prettier
+        - [ ] 代码检查 => ESLint(使用什么规范)
+        - [ ] 代码格式化 => 项目内配置文件
+        - [ ] 项目运维：代码管理、构建管理(构建选择)、项目部署、监控告警
+        - [ ] CI/CD
+      - [ ] theme
+      - [ ] i18n
+      - [ ] env(全局项目公用)
+      - [ ] 通用开发优化
+        - [ ] 页面配置化
+        - [ ] 路由自动注册
+        - [ ] 自动注册 Svg 图标
+        - [ ] 插件/组件 => npm
+        - [ ] 指令/工具
+      - [ ] 通用交互优化
+        - [ ] 页面/表格/统计数据等 loading
+        - [ ] 常用状态页: 404
+        - [ ] 视图空占位
+        - [ ] 提交/保存/提交等按钮的状态锁
+      - [ ] 项目资源
+        - [ ] styles
+        - [ ] utils
+          - [ ] 按功能分类分文件拆分
+        - [ ] hooks
+        - [ ] components
+        - [ ] plugins
+        - [ ] iconFont
 
 ### 热门 vue & node 项目参考
 
