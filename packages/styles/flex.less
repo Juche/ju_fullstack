@@ -1,0 +1,132 @@
+.flex {
+  display: flex;
+  box-sizing: border-box;
+}
+
+// 布局方向
+.flex-row {
+  &:extend(.flex);
+  flex-direction: row;
+  // width: 100%;
+}
+.flex-col {
+  &:extend(.flex);
+  flex-direction: column;
+}
+
+// -----  -----  -----  ----- //
+
+// 水平布局 => 对齐方式拓展
+.flex-row-align (@horizon: flex-start, @vertical: flex-start,) {
+  &:extend(.flex-row);
+  justify-content: @horizon;
+  align-items: @vertical;
+}
+
+/**
+ * 水平布局 => 居中对齐
+ * .flex-row-水平-竖直(默认值可省略)
+ */
+.flex-c,
+.flex-row-c,
+.flex-row-c-c {
+  .flex-row-align (center, center);
+}
+.flex-row-hc,
+.flex-row-c-fs {
+  .flex-row-align (center);
+}
+.flex-row-vc,
+.flex-row-fs-c {
+  .flex-row-align ('', center);;
+}
+.flex-row-ve {
+  .flex-row-align ('', end);;
+}
+// 水平布局 => space-between
+.flex-row-sb {
+  .flex-row-align (space-between);
+}
+.flex-row-sb-c {
+  .flex-row-align (space-between, center);
+}
+// 水平布局 => space-around
+.flex-row-sa {
+  .flex-row-align (space-around);
+}
+.flex-row-sa-c {
+  .flex-row-align (space-around, center);
+}
+// 水平布局 => space-evenly
+.flex-row-se {
+  .flex-row-align (space-evenly);
+}
+.flex-row-se-c {
+  .flex-row-align (space-evenly, center);
+}
+// 水平布局 => flex-end
+.flex-row-fe {
+  .flex-row-align (flex-end);
+}
+.flex-row-fe-c {
+  .flex-row-align (flex-end, center);
+}
+
+// -----  -----  -----  ----- //
+
+// 垂直布局 => 对齐方式拓展
+.flex-col-align (@horizon: flex-start, @vertical: flex-start,) {
+  &:extend(.flex-col);
+  align-items: @horizon;
+  justify-content: @vertical;
+}
+
+/**
+ * 垂直布局 => 居中对齐
+ * .flex-row-水平-竖直(默认值可省略)
+ */
+.flex-col-c {
+  .flex-col-align (center, center);
+}
+.flex-col-hc,
+.flex-col-c-fs {
+  .flex-col-align (center);
+}
+.flex-col-c-fe {
+  .flex-col-align (center, flex-end);
+}
+.flex-col-vc,
+.flex-col-fs-c {
+  .flex-col-align ('', center);;
+}
+// 垂直布局 => space-between
+.flex-col-sb {
+  .flex-col-align ('', space-between);;
+}
+.flex-col-c-sb {
+  .flex-col-align (center, space-between);
+}
+// 垂直布局 => space-around
+.flex-col-sa {
+  .flex-col-align ('', space-around);;
+}
+.flex-col-c-sa {
+  .flex-col-align (center, space-around);
+}
+// 垂直布局 => space-evenly
+.flex-col-se {
+  .flex-col-align ('', space-evenly);;
+}
+.flex-col-c-se {
+  .flex-col-align (center, space-evenly);
+}
+
+// align-self
+.align-fe {
+  align-self: flex-end;
+}
+
+// justify-self
+.justify-fe {
+  justify-self: flex-end;
+}
