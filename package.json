@@ -5,7 +5,15 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "vue-admin": "pnpm -F lottery_ad_client serve",
+    "build:vue-admin": "pnpm -F lottery_ad_client build",
+    "preview:vue-admin": "pnpm -F lottery_ad_client preview",
+    "vue-h5": "pnpm -F lottery_ad_client serve",
+    "build:vue-h5": "pnpm -F lottery_ad_client build",
+    "preview:vue-h5": "pnpm -F lottery_ad_client preview",
+    "node-server": "pnpm -F lottery_ad_client serve",
+    "build:node-server": "pnpm -F lottery_ad_client build",
+    "preview:node-server": "pnpm -F lottery_ad_client preview"
   },
   "keywords": [],
   "author": "",
