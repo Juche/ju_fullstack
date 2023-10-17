@@ -1,4 +1,3 @@
-import { eventHub } from '@pack/zzwlUI';
 import { Modal } from 'ant-design-vue';
 
 // async function getData() {
@@ -38,7 +37,6 @@ export default function deleteConfirmModal({ delFn, delParams, delKey, cbFn, cbP
       if (code === 200) {
         (cbFn && cbFn(cbParams || null, true)) || eventHub.emit('updateTableData');
       }
-      // (cbFn && cbFn(cbParams || null, true)) || eventHub.emit('updateTableData');
     },
   });
 }

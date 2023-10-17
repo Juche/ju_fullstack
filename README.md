@@ -23,7 +23,10 @@
 
 - nuxt(vue)
 - next(react)
-- **Koa** / Express / Nest / Fastify / astro/ solid / qwik
+- solid
+- **Koa** / Express / Nest / Fastify  / qwik
+- astro: 目标是构建内容（静态网站），而不是web APP级别的应用, 可以同时写React、Vue、Svelte、SolidJS等多种语言的框架, 支持 SSR 和 SSG
+- Prisma: 提供一套简洁的 API, 使你更加方便地操作数据库和理解查询语句,支持 PostgreSQL、MySQL、SQL Server、SQLite、MongoDB 和 CockroachDB
 
 ## 项目结构
 
