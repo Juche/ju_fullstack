@@ -21,12 +21,34 @@
 
 ## 技术选型
 
-- nuxt(vue)
-- next(react)
-- solid
-- **Koa** / Express / Nest / Fastify  / qwik
-- astro: 目标是构建内容（静态网站），而不是web APP级别的应用, 可以同时写React、Vue、Svelte、SolidJS等多种语言的框架, 支持 SSR 和 SSG
-- Prisma: 提供一套简洁的 API, 使你更加方便地操作数据库和理解查询语句,支持 PostgreSQL、MySQL、SQL Server、SQLite、MongoDB 和 CockroachDB
+- FE
+  - [solid]
+  - [Headless UI]
+
+- SSR/SSG
+  - [nuxt(vue)]
+  - [next/Remix(react)]
+  - [qwik]
+  - [Partytown] is a lazy-loaded library to help relocate resource intensive scripts into a web worker, and off of the main thread. Its goal is to help speed up sites by dedicating the main thread to your code, and offloading third-party scripts to a web worker.
+
+  - [astro]: 目标是构建内容（静态网站），而不是web APP级别的应用, 可以同时写React、Vue、Svelte、SolidJS等多种语言的框架, 支持 SSR 和 SSG
+  - [VitePress]
+  - [Slidev]
+
+- BE
+  - [Nest / **Koa** / Express / egg / Fastify]
+
+- DB
+  - [GraphQL]
+  - [Prisma]: 提供一套简洁的 API, 使你更加方便地操作数据库和理解查询语句,支持 PostgreSQL、MySQL、SQL Server、SQLite、MongoDB 和 CockroachDB
+
+- Utils
+  - [RxJS]: 是一个通过使用可观察序列来编写异步和基于事件的程序的库,将 RxJS 视为事件的 Lodash
+  - [Lodash]
+  - [VueUse]
+
+- Test
+  - [Vitest]
 
 ## 项目结构
 
