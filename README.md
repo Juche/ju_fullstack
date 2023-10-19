@@ -19,6 +19,15 @@
   - [ ] 持续集成
   <!-- - [ ]  -->
 
+<!-- 开发环境，你得起个服务去调试代码吧
+支持按需引入，应该没有人愿意全量导入组件库把
+组件库编译，生成umd和esm模块的组件代码
+构建开发文档，至少得有个中文文档说明一下组件怎么用吧
+单元测试，你写的代码得信的过吧
+桌面端和移动端的组件预览，你得让使用者看到组件具体长什么样子吧
+代码格式化和规范检测工具，毕竟是团队作案，没有规矩不成方圆
+自动化的文档部署和测试流程，总不能每次发布版本都手动去部署文档和测试吧 -->
+
 ## 技术选型
 
 - FE
@@ -31,7 +40,7 @@
   - [qwik]
   - [Partytown] is a lazy-loaded library to help relocate resource intensive scripts into a web worker, and off of the main thread. Its goal is to help speed up sites by dedicating the main thread to your code, and offloading third-party scripts to a web worker.
 
-  - [astro]: 目标是构建内容（静态网站），而不是web APP级别的应用, 可以同时写React、Vue、Svelte、SolidJS等多种语言的框架, 支持 SSR 和 SSG
+  - [astro(Islands架构)]: 目标是构建内容（静态网站），而不是web APP级别的应用, 可以同时写React、Vue、Svelte、SolidJS等多种语言的框架, 支持 SSR 和 SSG
   - [VitePress]
   - [Slidev]
 
@@ -49,6 +58,19 @@
 
 - Test
   - [Vitest]
+
+- Tools
+  - [nvm => volta]: 等正式支持 pnpm
+
+- Others
+  - unocss | TailWind
+  - css-doodle: 组合有趣的视觉效果
+  - fancy-components: 几个效果酷炫的 web component 组件
+  - <https://fancy-components.github.io/#/>
+  - <https://juejin.cn/post/7013247812628381704>
+  - <https://juejin.cn/post/7012564452545396750>
+  - Varlet: 基于 Vue3 开发的 Material 风格移动端组件库
+  - dnd-kit: React 生态的 drag and drop 工具
 
 ## 项目结构
 
