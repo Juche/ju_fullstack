@@ -2,98 +2,40 @@
 
 ## 全栈实践大纲
 
-- [ ] git 项目管理
-- [ ] Node 后端
-- [ ] 服务端渲染
-- [ ] 微服务
-- [?] 微前端
-  - 方案
-    - Nginx配置不同应用的转发
-    - iframe(天然隔离)
-    - Web Components
-    - 组合式应用路由分发
-  - 主应用(基座)解决的问题
-    - 路由切换的分发问题
-    - 主微应用的隔离问题
-      - js: 通常在Node.js端可以采用vm模块，而对于浏览器，则需要结合with关键字和window.Proxy对象来实现浏览器端的沙箱。
-      - css: CSS Module 或者命名空间(postcss插件打包)
-    - 通信问题: 中间媒介或者说全局对象,消息订阅（pub/sub）模式的通信机制
-- [ ] mock
-- [ ] 测试
-- [ ] 脚本
-- [ ] 数据库
-  - [ ] Mysql
+- [ ] 项目管理
+  - [ ] git/pnpm & monorepo/changesets
+- [ ] 前端
+  - [ ] Vue
+  - [ ] sass/unocss/TailWind
+  - [ ] 微前端 QianKun/Micro App
+  - [ ] 服务端渲染 SSR/SSG
+    - [ ] nuxt/next/astro/VitePress/Slidev
+  - [ ] 工具: VueUse/RxJS/Lodash/localForage
+- [ ] 跨平台
+  - [ ] Flutter
+  - [ ] Rust 前端生态
+    - WebAssembly
+    - Tauri
+    - Yew
+- [ ] 后端
+  - [ ] node/spring boot
+  - [ ] Nest/Koa/Express/egg/Fastify
+  - [ ] 微服务
+  - [ ] 数据库: Mysql/PostgreSQL
+  - [ ] Prisma
   - [ ] GraphQL
 - [ ] 工程化 & 部署
+  - [ ] nvm => volta: 等正式支持 pnpm
+  - [ ] mock
+  - [ ] 测试 Vitest
   - [ ] nginx
   - [ ] pm2
-  - [ ] 持续集成
-  <!-- - [ ]  -->
-
-<!-- 开发环境，你得起个服务去调试代码吧
-支持按需引入，应该没有人愿意全量导入组件库把
-组件库编译，生成umd和esm模块的组件代码
-构建开发文档，至少得有个中文文档说明一下组件怎么用吧
-单元测试，你写的代码得信的过吧
-桌面端和移动端的组件预览，你得让使用者看到组件具体长什么样子吧
-代码格式化和规范检测工具，毕竟是团队作案，没有规矩不成方圆
-自动化的文档部署和测试流程，总不能每次发布版本都手动去部署文档和测试吧 -->
-
-## 技术选型
-
-- FE
-  - solid
-  - Headless UI
-
-- SSR/SSG
-  - nuxt(vue)
-  - next/Remix(react)
-  - qwik
-  - Partytown is a lazy-loaded library to help relocate resource intensive scripts into a web worker, and off of the main thread. Its goal is to help speed up sites by dedicating the main thread to your code, and offloading third-party scripts to a web worker.
-
-  - [astro(Islands架构)]: 目标是构建内容（静态网站），而不是web APP级别的应用, 可以同时写React、Vue、Svelte、SolidJS等多种语言的框架, 支持 SSR 和 SSG
-  - VitePress
-  - Slidev
-
-- BE
-  - [Nest]
-  - Koa
-  - Express
-  - egg
-  - Fastify
-
-- DB
-  - [GraphQL]
-  - [Prisma]: 提供一套简洁的 API, 使你更加方便地操作数据库和理解查询语句,支持 PostgreSQL、MySQL、SQL Server、SQLite、MongoDB 和 CockroachDB
-  - [localForage]
-
-- Utils
-  - [RxJS]: 是一个通过使用可观察序列来编写异步和基于事件的程序的库,将 RxJS 视为事件的 Lodash
-  - Lodash
-  - [VueUse]
-
-- Test
-  - [Vitest]
-
-- Tools
-  - [nvm => volta]: 等正式支持 pnpm
-
-- 微服务
-  - Qiankun
-  - Micro App
-  - <https://juejin.cn/post/7236021829000691771>
-  - <https://www.zhihu.com/question/338082919>
-
-- Others
-  - pnpm + changesets
-  - unocss | TailWind
-  - css-doodle: 组合有趣的视觉效果
-  - fancy-components: 几个效果酷炫的 web component 组件
-  - <https://fancy-components.github.io/#/>
-  - <https://juejin.cn/post/7013247812628381704>
-  - <https://juejin.cn/post/7012564452545396750>
-  - Varlet: 基于 Vue3 开发的 Material 风格移动端组件库
-  - dnd-kit: React 生态的 drag and drop 工具
+  - [ ] 脚本
+    - [create-vite](https://github.com/vitejs/vite/blob/main/packages/create-vite/src/index.ts)
+  - [ ] CI/CD
+  - [ ] Git Hook 工具：husky + lint-staged
+  - [ ] 代码规范：EditorConfig + Prettier + ESLint
+  - [ ] 提交规范：Commitizen + Commitlint
 
 ## 项目结构
 
@@ -121,7 +63,6 @@
 
 - [x] 初始代码仓库
 - [x] 仓库用户信息配置
-
   - [x] shell 脚本
 
   ```sh
@@ -129,49 +70,10 @@
   git config user.email "azhucheng1@qq.com"
   ```
 
-  - [ ] node 脚本
-
 ### 初始化项目
 
 - 在 `projects` 里分别创建 `admin` `client` `server` 三个项目
 - 在项目下分别运行 `pnpm init` 初始化项目
-- [ ] monorepo
-
-#### server
-
-- 添加依赖 `pnpm i koa`
-
----
-
-## 其他问题
-
-- Linux 子系统 ip 变化的问题 => `ip addr` 结合脚本
-
-```js
-import { networkInterfaces, type } from 'node:os'
-
-const netInfo = networkInterfaces() //网络信息
-const ip = netInfo.eth0[0].address // Linux 系统下
-```
-
-## 技术名词
-
-- 客户端渲染 CSR（Client Side Rendering）
-- 服务器端渲染 SSR（Server Side Rendering）
-- 静态网站生成器 SSG（Static Site Generator）
-- 递增静态再生 ISR（Incremental Static Regeneration）
-
-## 整理中
-
-### prettier eslint 配置
-
-> [Hacking Semicolons](https://slides.com/evanyou/semicolons)
-
-### vue 项目测试用例
-
-### vue hooks
-
-### node full stack
 
 ### 搭建一个全栈项目
 
@@ -236,7 +138,27 @@ const ip = netInfo.eth0[0].address // Linux 系统下
 
 ### 热门 vue & node 项目参考
 
-### 其他
+## 技术名词
+
+- 客户端渲染 CSR（Client Side Rendering）
+- 服务器端渲染 SSR（Server Side Rendering）
+- 静态网站生成器 SSG（Static Site Generator）
+- 递增静态再生 ISR（Incremental Static Regeneration）
+
+## 其他
+
+- prettier eslint 配置
+
+> [Hacking Semicolons](https://slides.com/evanyou/semicolons)
+
+- Linux 子系统 ip 变化的问题 => `ip addr` 结合脚本
+
+```js
+import { networkInterfaces, type } from 'node:os'
+
+const netInfo = networkInterfaces() //网络信息
+const ip = netInfo.eth0[0].address // Linux 系统下
+```
 
 - 学习一个细分 & 小众方向
 - git
@@ -247,9 +169,74 @@ const ip = netInfo.eth0[0].address // Linux 系统下
   git LFS
 
 - Deno / Node / Bun
-- Rust 前端生态
-  - WebAssembly
-  - Tauri
-  - Yew
-- Rust / Dart
-- Tauri / Flutter
+
+- [ ] 微前端
+  - 方案
+    - Nginx配置不同应用的转发
+    - iframe(天然隔离)
+    - Web Components
+    - 组合式应用路由分发
+  - 主应用(基座)解决的问题
+    - 路由切换的分发问题
+    - 主微应用的隔离问题
+      - js: 通常在Node.js端可以采用vm模块，而对于浏览器，则需要结合with关键字和window.Proxy对象来实现浏览器端的沙箱。
+      - css: CSS Module 或者命名空间(postcss插件打包)
+    - 通信问题: 中间媒介或者说全局对象,消息订阅（pub/sub）模式的通信机制
+
+- FE
+  - solid
+  - Headless UI
+
+- SSR/SSG
+  - nuxt(vue)
+  - next/Remix(react)
+  - qwik
+  - Partytown is a lazy-loaded library to help relocate resource intensive scripts into a web worker, and off of the main thread. Its goal is to help speed up sites by dedicating the main thread to your code, and offloading third-party scripts to a web worker.
+
+  - [astro(Islands架构)]: 目标是构建内容（静态网站），而不是web APP级别的应用, 可以同时写React、Vue、Svelte、SolidJS等多种语言的框架, 支持 SSR 和 SSG
+  - VitePress
+  - Slidev
+
+- BE
+  - [Nest]
+  - Koa
+  - Express
+  - egg
+  - Fastify
+
+- DB
+  - [GraphQL]
+  - [Prisma]: 提供一套简洁的 API, 使你更加方便地操作数据库和理解查询语句,支持 PostgreSQL、MySQL、SQL Server、SQLite、MongoDB 和 CockroachDB
+  - [localForage]
+
+- Utils
+  - [RxJS]: 是一个通过使用可观察序列来编写异步和基于事件的程序的库,将 RxJS 视为事件的 Lodash
+  - Lodash
+  - [VueUse]
+
+- Test
+  - [Vitest]
+
+- Tools
+  - [nvm => volta]: 等正式支持 pnpm
+
+- 微服务
+  - Qiankun
+  - [Micro App]
+  - <https://juejin.cn/post/7236021829000691771>
+  - <https://www.zhihu.com/question/338082919>
+
+- Others
+  - [pnpm + changesets]
+  - unocss | TailWind
+  - css-doodle: 组合有趣的视觉效果
+  - fancy-components: 几个效果酷炫的 web component 组件
+  - <https://fancy-components.github.io/#/>
+  - <https://juejin.cn/post/7013247812628381704>
+  - <https://juejin.cn/post/7012564452545396750>
+  - Varlet: 基于 Vue3 开发的 Material 风格移动端组件库
+  - dnd-kit: React 生态的 drag and drop 工具
+  - CI/CD
+  - Git Hook 工具：husky + lint-staged
+  - 代码规范：EditorConfig + Prettier + ESLint
+  - 提交规范：Commitizen + Commitlint
