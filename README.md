@@ -4,14 +4,20 @@
 
 - [ ] 项目管理
   - [ ] git/pnpm & monorepo/changesets
+  - [ ] create-project(参考 create-vite)
 - [ ] 前端
-  - [ ] Vue
-  - [ ] sass/unocss/TailWind
   - [ ] 微前端 QianKun/Micro App
-  - [ ] 服务端渲染 SSR/SSG
-    - [ ] nuxt/next/astro/VitePress/Slidev
-  - [ ] 工具: VueUse/RxJS/Lodash/localForage
+  - [ ] Vue
+  - [ ] SPA/MPA/SSR/SSG
+  - [ ] nuxt/astro/VitePress/Slidev
+  - [ ] 工具: VueUse/RxJS/Lodash/localForage/pinia
+  - [ ] Layout system/PWA/I18n/iconify/env
+  - [ ] 状态页/列表页/表格页/tab页/弹窗页/loading/placeholder
+  - [ ] Hash/History
+  - [ ] web Component
+  - [ ] sass/unocss/TailWind/PostCss
 - [ ] 跨平台
+  - [ ] UniApp
   - [ ] Flutter
   - [ ] Rust 前端生态
     - WebAssembly
