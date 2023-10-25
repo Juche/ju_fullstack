@@ -40,7 +40,7 @@
 
 ## 搭建基板
 
-- Eslint `"type": "module"`
+- Eslint
 
 ```js
 // 项目中配置了Eslint，但是不生效
@@ -59,7 +59,7 @@
 // 3. 使用动态 import() 语法：虽然这不直接适用于当前问题，但在其他地方使用 require() 加载 ES 模块时，可以将 require() 更改为 import()。
 ```
 
-- simple-git-hooks
+- [simple-git-hooks](https://github.com/toplenboren/simple-git-hooks#readme)
 
 ```sh
 # 问题: git commit 并未触发钩子
