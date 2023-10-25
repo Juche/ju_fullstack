@@ -3,7 +3,8 @@
 ## 全栈实践大纲
 
 - [ ] 项目管理
-  - [ ] git/pnpm & monorepo/changesets
+  - [ ] git/pnpm & monorepo
+  - [ ] changesets/conventional-changelog-cli/commitizen & cz-conventional-changelog/simple-git-hooks/husky
   - [ ] create-project(参考 create-vite)
 - [ ] 前端
   - [ ] 微前端 QianKun/Micro App
@@ -143,6 +144,20 @@
         - [ ] iconFont
 
 ### 热门 vue & node 项目参考
+
+## 代码提交规范
+
+'feat', // 新功能 feature
+'fix', // 修复 bug
+'docs', // 文档注释
+'style', // 代码格式(不影响代码运行的变动)
+'refactor', // 重构(既不增加新功能，也不是修复bug)
+'perf', // 性能优化
+'test', // 增加测试
+'chore', // 构建过程或辅助工具的变动
+'revert', // 回退
+'build' // 打包
+'ci' // 持续集成相关
 
 ## 技术名词
 
