@@ -35,3 +35,40 @@
   - [ ] UniApp + Vue2 => 浏览器(兼容旧版) / 小程序 / Android / IOS
   - [ ] Flutter => Windows / MacOS / Linux / Android / IOS
   - [ ] Tauri => Windows / MacOS / Linux / Android / IOS
+
+---
+
+## 搭建基板
+
+- Eslint `"type": "module"`
+
+```js
+// 项目中配置了Eslint，但是不生效
+// 链接：https://juejin.cn/post/7244070072787501112
+
+// 手动检查 pnpm lint
+// "lint": "eslint --ext .ts,.tsx,.vue,.js,.jsx packages projects --fix"
+
+// 错误的原因:
+项目的 package.json 文件中定义了 "type": "module"，这使得Node.js将所有 .js 文件都视为 ES 模块。但是 ESLint 目前只能处理 CommonJS 格式的配置文件（.eslintrc.cjs 或 .eslintrc.js 文件），并且在这种情况下无法加载 ES 模块格式的配置文件（.eslintrc.js 文件）
+
+// 解决方法:
+// 0. 直接去除 "type": "module" 即可达到目的 => 会影响 `simple-git-hooks`
+1. 重命名配置文件：将 .eslintrc.js 文件重命名为 .eslintrc.cjs。
+// 2. 改变 package.json 文件中的 type 属性：可以在 package.json 文件中将 "type": "module" 更改为 "type": "commonjs"，使得 Node.js 将所有 .js 文件视为 CommonJS 模块。但是这会影响到项目中的所有 .js 文件，可能会带来其他问题。
+// 3. 使用动态 import() 语法：虽然这不直接适用于当前问题，但在其他地方使用 require() 加载 ES 模块时，可以将 require() 更改为 import()。
+```
+
+- simple-git-hooks
+
+```sh
+# 问题: git commit 并未触发钩子
+# 运行 CLI 脚本以使用配置中的命令更新 git 钩子：
+
+# [Optional] These 2 steps can be skipped for non-husky users
+git config core.hooksPath .git/hooks/
+rm -rf .git/hooks
+
+# Update ./git/hooks
+npx simple-git-hooks
+```
