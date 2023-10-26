@@ -1,8 +1,0 @@
-dist
-**/dist
-build/*.js
-assets
-public
-unpackage
-__**
-**/__**

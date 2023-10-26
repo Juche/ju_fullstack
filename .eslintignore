@@ -1,5 +1,7 @@
-build/*.js
 assets
-public
+build
 dist
+plugin
+public
 unpackage
+__**
