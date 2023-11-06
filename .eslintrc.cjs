@@ -42,14 +42,14 @@ module.exports = {
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     // 'prettier/prettier': 'error', // 开启规则
     semi: ['warn', 'never'],
+    // 保存代码时缩进4个空格
+    indent: ['error', 2],
+    // 解决let被强转为const问题
+    // 'prefer-const': true,
     'vue/multi-word-component-names': 'off',
     // 'vue/no-unused-vars': 'warn',
     'vue/script-indent': ['error', 2, { baseIndent: 1 }],
     'vue/v-on-event-hyphenation': 'off', // 关闭 v-on 事件名使用连字符,可使用驼峰
-    // // 解决let被强转为const问题
-    // 'prefer-const': true,
-    // // 保存代码时缩进4个空格
-    // indent: ['error', 2],
     // 'prettier/prettier': [
     //   'error',
     //   {},
