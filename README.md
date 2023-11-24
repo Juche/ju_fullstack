@@ -3,19 +3,19 @@
 ## 全栈实践大纲
 
 - [ ] 项目管理
-  - [ ] git/pnpm & monorepo
-  - [ ] changesets/conventional-changelog-cli/commitizen & cz-conventional-changelog/simple-git-hooks/husky
+  - [x] pnpm & monorepo
   - [ ] create-project(参考 create-vite)
+  - [ ] npm 包
 - [ ] 前端
-  - [ ] 微前端 QianKun/Micro App
-  - [ ] Vue
   - [ ] SPA/MPA/SSR/SSG
-  - [ ] nuxt/astro/VitePress/Slidev
+  - [TODO] nuxt/**astro**/VitePress/Slidev
+  - [TODO] 微前端 QianKun/**Micro App**
+  - [ ] Vue
   - [ ] 工具: VueUse/RxJS/Lodash/localForage/pinia
   - [ ] Layout system/PWA/I18n/iconify/env
   - [ ] 状态页/列表页/表格页/tab页/弹窗页/loading/placeholder
   - [ ] Hash/History
-  - [ ] web Component
+  - [ ] Web Component
   - [ ] sass/unocss/TailWind/PostCss
 - [ ] 跨平台
   - [ ] UniApp
@@ -39,10 +39,12 @@
   - [ ] pm2
   - [ ] 脚本
     - [create-vite](https://github.com/vitejs/vite/blob/main/packages/create-vite/src/index.ts)
-  - [ ] CI/CD
-  - [ ] Git Hook 工具：husky + lint-staged
-  - [ ] 代码规范：EditorConfig + Prettier + ESLint
-  - [ ] 提交规范：Commitizen + Commitlint
+  - [TODO] **CI/CD**
+  - [ ] Docker
+  - [x] 代码规范&格式化:  ESLint + ESlint插件(<https://juejin.cn/post/7156893291726782500>)
+  - [x] 代码提交规范: simple-git-hooks + lint-staged
+  - [x] 项目日志生成: conventional-changelog-cli
+  - [-] changesets/conventional-changelog-cli/commitizen & cz-conventional-changelog/husky
 
 ## 项目结构
 
@@ -249,7 +251,7 @@ const ip = netInfo.eth0[0].address // Linux 系统下
 
 - Others
   - [pnpm + changesets]
-  - unocss | TailWind
+  - unocss | TailWind | neumorphism styles
   - css-doodle: 组合有趣的视觉效果
   - fancy-components: 几个效果酷炫的 web component 组件
   - <https://fancy-components.github.io/#/>
@@ -261,3 +263,4 @@ const ip = netInfo.eth0[0].address // Linux 系统下
   - Git Hook 工具：husky + lint-staged
   - 代码规范：EditorConfig + Prettier + ESLint
   - 提交规范：Commitizen + Commitlint
+  - Monaco Editor
