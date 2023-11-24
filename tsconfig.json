@@ -1,0 +1,66 @@
+{
+  "compilerOptions": {
+    "target": "esnext", // 编译输出目标 ES 版本
+    "module": "esnext", // 采用的模块系统
+    "moduleResolution": "node", // 如何处理模块
+    "isolatedModules": true,
+    "useDefineForClassFields": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "declaration": false,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true, // 允许导入带有“.json”扩展名的模块
+    "esModuleInterop": true, // CommonJS/AMD/UMD 模块导入兼容
+    "allowSyntheticDefaultImports": true, // 允许从没有设置默认导出的模块中默认导入
+    "importHelpers": true, // 模块导入辅助，通过 tslib 引入 helper 函数，https://www.typescriptlang.org/tsconfig#importHelpers
+    "experimentalDecorators": true, // 启用装饰器
+    "skipLibCheck": true, // 跳过库声明文件的类型检查
+    // "suppressImplicitAnyIndexErrors": true, // 禁止报告对象索引的隐式 async 错误
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    // "baseUrl": "./",
+    // "paths": {
+    //   "@c/*": [
+    //     "packages/components/*"
+    //   ],
+    //   "@m/*": [
+    //     "packages/mock/*"
+    //   ],
+    //   "@s/*": [
+    //     "packages/styles/*"
+    //   ],
+    //   "@u/*": [
+    //     "packages/utils/*"
+    //   ]
+    // },
+    "types": [
+      "vite/client",
+      "node",
+    ]
+  },
+  // "include": [
+  //   // "src",
+  //   // "src/**/*.ts",
+  //   // "src/**/*.d.ts",
+  //   // "src/**/*.tsx",
+  //   // "src/**/*.vue",
+  //   "types",
+  //   "packages",
+  //   "packages/*.d.ts",
+  //   "packages/**/*.d.ts",
+  // ],
+  "exclude": [ // 解析时跳过的文件
+    "dist",
+    "node_modules",
+    "uni_modules",
+    "unpackage",
+  ],
+  // "typeAcquisition": { // 控制 TypeScript 的自动类型获取( 在 IDE 中自动下载并导入类型定义)
+  //   "include": [
+  //     "jest"
+  //   ]
+  // }
+}
