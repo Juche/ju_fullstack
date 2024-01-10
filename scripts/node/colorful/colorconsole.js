@@ -11,7 +11,7 @@ class Clog {
       magenta: 35,
       cyan: 36,
       white: 37,
-    };
+    }
     this.bgcolors = {
       black: 40,
       red: 41,
@@ -21,104 +21,104 @@ class Clog {
       magenta: 45,
       cyan: 46,
       white: 47,
-    };
+    }
     this.effects = {
       bold: 1,
       underline: 4,
       blink: 5,
       reverse: 7,
       hide: 8,
-    };
+    }
   }
 
   is_colornum(color) {
     if (((color = parseInt(color)), !isNaN(color))) {
       if (color >= 0 && color <= 255) {
-        return true;
+        return true
       }
     }
-    return false;
+    return false
   }
   convert_to_colornum(color) {
     if (((color = parseInt(color)), !isNaN(color))) {
       if (color >= 0 && color <= 255) {
-        return color;
+        return color
       } else {
-        return Math.abs(color) % 256;
+        return Math.abs(color) % 256
       }
     }
-    return false;
+    return false
   }
   colortext(text, color, bgcolor, effect) {
-    if (!text) return text;
+    if (!text) return text
 
-    var vals = [];
+    var vals = []
     if (color) {
       if (color in this.fgcolors) {
-        vals.push(this.fgcolors[color]);
+        vals.push(this.fgcolors[color])
       } else {
-        color = convert_to_colornum(color);
+        color = convert_to_colornum(color)
         if (color !== false) {
-          vals.push('38;5;' + color);
+          vals.push('38;5;' + color)
         }
       }
     }
     if (bgcolor) {
       if (bgcolor in this.bgcolors) {
-        vals.push(this.bgcolors[bgcolor]);
+        vals.push(this.bgcolors[bgcolor])
       } else {
-        bgcolor = convert_to_colornum(bgcolor);
+        bgcolor = convert_to_colornum(bgcolor)
         if (color !== false) {
-          vals.push('48;5;' + bgcolor);
+          vals.push('48;5;' + bgcolor)
         }
       }
     }
     if (effect && effect in this.effects) {
-      vals.push(this.effects[effect]);
+      vals.push(this.effects[effect])
     }
     if (vals.length) {
-      var prefix = '\u001b[';
-      var reset = prefix + '0m';
-      text = prefix + vals.join(';') + 'm' + text + reset;
+      var prefix = '\u001b['
+      var reset = prefix + '0m'
+      text = prefix + vals.join(';') + 'm' + text + reset
     }
-    return text;
+    return text
   }
   colorlog(text, color, bgcolor, effect) {
-    var text = colortext(text, color, bgcolor, effect);
-    var args = [].slice.call(arguments, 4);
+    var text = colortext(text, color, bgcolor, effect)
+    var args = [].slice.call(arguments, 4)
     // args.unshift(text)
-    args.push(text);
-    return console.log.apply(null, args);
+    args.push(text)
+    return console.log.apply(null, args)
   }
   colorplate() {
     function fixwstr(num) {
-      num = num + '';
-      len = num.length;
+      num = num + ''
+      len = num.length
       if (len == 1) {
-        num = '  ' + num;
+        num = '  ' + num
       }
       if (len == 2) {
-        num = ' ' + num;
+        num = ' ' + num
       }
-      return ' ' + num + ' ';
+      return ' ' + num + ' '
     }
 
     for (var i = 0; i < 16; i++) {
-      var line = '';
+      var line = ''
       for (var j = 0; j < 16; j++) {
-        var color = 16 * i + j;
-        line += colortext(fixwstr(color), color);
+        var color = 16 * i + j
+        line += colortext(fixwstr(color), color)
       }
-      console.log(line);
+      console.log(line)
     }
 
     for (var i = 0; i < 16; i++) {
-      var line = '';
+      var line = ''
       for (var j = 0; j < 16; j++) {
-        var color = 16 * i + j;
-        line += colortext(fixwstr(color), 'white', color);
+        var color = 16 * i + j
+        line += colortext(fixwstr(color), 'white', color)
       }
-      console.log(line);
+      console.log(line)
     }
   }
   // return {
@@ -128,9 +128,9 @@ class Clog {
   // };
 }
 
-const clog = new Clog();
+const clog = new Clog()
 
-clog.colorplate();
+clog.colorplate()
 
 // clog.log('hello world!', 'red', null, 'bold');
 

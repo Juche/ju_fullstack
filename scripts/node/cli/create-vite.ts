@@ -1,11 +1,6 @@
 #!/usr/bin/env node
 
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import spawn from 'cross-spawn'
-import minimist from 'minimist'
-import prompts from 'prompts'
 import {
   blue,
   cyan,
@@ -17,6 +12,11 @@ import {
   reset,
   yellow,
 } from 'kolorist'
+import minimist from 'minimist'
+import fs from 'node:fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import prompts from 'prompts'
 
 // Avoids autoconversion to number of the project name by defining that the args
 // non associated with an option ( _ ) needs to be parsed as a string. See #4606
@@ -228,7 +228,7 @@ async function init() {
             (targetDir === '.'
               ? 'Current directory'
               : `Target directory "${targetDir}"`) +
-            ` is not empty. Remove existing files and continue?`,
+            ' is not empty. Remove existing files and continue?',
         },
         {
           type: (_, { overwrite }: { overwrite?: boolean }) => {
@@ -254,8 +254,8 @@ async function init() {
           message:
             typeof argTemplate === 'string' && !TEMPLATES.includes(argTemplate)
               ? reset(
-                  `"${argTemplate}" isn't a valid template. Please choose from below: `,
-                )
+                `"${argTemplate}" isn't a valid template. Please choose from below: `,
+              )
               : reset('Select a framework:'),
           initial: 0,
           choices: FRAMEWORKS.map((framework) => {
@@ -368,7 +368,7 @@ async function init() {
   }
 
   const pkg = JSON.parse(
-    fs.readFileSync(path.join(templateDir, `package.json`), 'utf-8'),
+    fs.readFileSync(path.join(templateDir, 'package.json'), 'utf-8'),
   )
 
   pkg.name = packageName || getProjectName()
@@ -380,7 +380,7 @@ async function init() {
   }
 
   const cdProjectName = path.relative(cwd, root)
-  console.log(`\nDone. Now run:\n`)
+  console.log('\nDone. Now run:\n')
   if (root !== cwd) {
     console.log(
       `  cd ${
@@ -469,7 +469,7 @@ function setupReactSwc(root: string, isTs: boolean) {
   editFile(path.resolve(root, 'package.json'), (content) => {
     return content.replace(
       /"@vitejs\/plugin-react": ".+?"/,
-      `"@vitejs/plugin-react-swc": "^3.0.0"`,
+      '"@vitejs/plugin-react-swc": "^3.0.0"',
     )
   })
   editFile(
