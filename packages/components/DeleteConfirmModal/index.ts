@@ -1,4 +1,4 @@
-import { Modal } from 'ant-design-vue';
+import { Modal } from 'ant-design-vue'
 
 // async function getData() {
 //   const { getFn: searchFn, statusKey, primaryKey } = tableOpts || {};
@@ -25,18 +25,18 @@ import { Modal } from 'ant-design-vue';
 
 // 优化删除确定弹窗
 export default function deleteConfirmModal({ delFn, delParams, delKey, cbFn, cbParams }) {
-  const delName = delKey ? `「${delParams[delKey]}」` : '';
+  const delName = delKey ? `「${delParams[delKey]}」` : ''
   Modal.confirm({
     title: `确定删除${delName}吗?`,
     // title: `确定删除「${delName}」吗?`,
     // icon: h(ExclamationCircleOutlined),
     // content: h('div', { class: 'text-success' }, ''),
     async onOk() {
-      const { code } = await delFn(delParams);
+      const { code } = await delFn(delParams)
       // 有回调函数就执行回调函数,否则 emit
       if (code === 200) {
-        (cbFn && cbFn(cbParams || null, true)) || eventHub.emit('updateTableData');
+        (cbFn && cbFn(cbParams || null, true)) || eventHub.emit('updateTableData')
       }
     },
-  });
+  })
 }

@@ -1,30 +1,45 @@
 <template>
   <div class="tab-btn-shortcuts w-100p flex-row-sb-c">
-    <a-tabs v-model:activeKey="activeKey" type="card" @change="change">
-      <a-tab-pane v-for="item in tabs" :key="item.val" :tab="item.key" :closable="false">
-      </a-tab-pane>
+    <a-tabs
+      v-model:activeKey="_activeKey"
+      type="card"
+      @change="change"
+    >
+      <a-tab-pane
+        v-for="item in tabs"
+        :key="item.val"
+        :tab="item.key"
+        :closable="false"
+      />
     </a-tabs>
   </div>
 </template>
 
 <script lang="ts" setup>
-  type Tab = {
-    key: string;
-    val: string | number;
-  };
+import { computed } from 'vue'
 
-  const props = defineProps<{
-    activeKey: string | number;
-    tabs: Tab[];
-  }>();
+type Tab = {
+  key: string;
+  val: string | number;
+};
 
-  const emit = defineEmits<{
-    (e: 'update:activeKey', activeKey): void;
-  }>();
+const props = defineProps<{
+  activeKey: string | number;
+  tabs: Tab[];
+}>()
 
-  function change(activeKey) {
-    emit('update:activeKey', activeKey);
-  }
+const emit = defineEmits<{
+  (e: 'update:activeKey', activeKey): void;
+}>()
+
+const _activeKey = computed({
+  get: () => props.activeKey,
+  set: (val) => emit('update:activeKey', val)
+})
+
+function change(activeKey) {
+  emit('update:activeKey', activeKey)
+}
 </script>
 
 <style lang="less" scoped>
