@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>装修</title>
+    <style>
+      body {
+      margin: 0;
+        padding: 0;
+      }
+      .ctn {
+        display: flex;
+        flex-wrap: wrap;
+        /* 004 */
+        background: #eddccb url(./月光银.png);
+        background: #eddccb url(./闪亮银.png);
+        background: #eddccb url(./金.png);
+        background: #eddccb url(./亚麻黄3.png);
+        background: #eddccb url(./闪亮金.png);
+        /* background: #b69968; */
+        background: #eddccb;
+        /* background: #faf0e6; */
+        /* background: #bca8a1; */
+        /* background: #c2bfb0; */
+        /* 005 */
+        /* background: #ab9d90; */
+        /* 006 */
+        /* background: #928272; */
+        /* 008 */
+        /* background: #9a9a92; */
+        /* 纯白 */
+        /* background: #ede6cc; */
+        /* 牙黄 */
+        /* background: #d4baa1; */
+        /* 金 */
+        /* background: #cfac49; */
+        /* 灰 */
+        /* background: #c2c2c6; */
+        /* background: #000; */
+      }
+      .box {
+        margin: 2px;
+        width: 240px;
+        height: 240px;
+        background: #fffff6;
+        background: #fffff9;
+        background: #fffffc;
+        /* background: #fffffe; */
+        /* background: #eddccb; */
+        /* background: #b69968; */
+        /* background: #faf0e6; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ctn">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
+
+
+(+ 3 3)
+6
+(+ 3 (+ 5 1))
+9
+(setq my-name "Juching")
+(insert "Hello " my-name)
+;; (defun hello() (insert "Hello " my-name))
+;; (hello)Hello Juching
+(defun hello(name) (insert "Hello " name))
+(hello "Juche")
+(switch-to-buffer-other-window "basics.org")
+(progn
+  (switch-to-buffer-other-window "basics.org")
+  (hello "Juche"))
+(let ((my-name "Juching"))
+  (switch-to-buffer-other-window ".spacemacs")
+  (erase-buffer)
+  (hello my-name)
+  (other-window 2))
+(format "hello %s!\n" "visitor")
+(defun hello(name)
+  (insert (format "Hello %s!\n" name)))
+(hello "Juche")Hello Juche!
+(defun greeting(name)
+  (let ((my-name "Juching"))
+  (insert (format "\nHello %s!\nI am %s."
+                  name
+                  my-name
+                  ))))
+(greeting "Juche")
+(read-from-minibuffer "Enter your name: ")
+(defun greeting(name)
+  (let ((my-name (read-from-minibuffer "Enter your name: ")))
+    (insert (format "\nGreeting name: %s\nMy name: %s"
+                    name
+                    my-name))))
+(greeting "Juche")
+(setq list-of-names '("Sarah" "Chloe" "Mathilde"))
+(car list-of-names)
+(cdr list-of-names)
+(push "Juche" list-of-names)
+(mapcar 'hello list-of-names)
+
+
