@@ -3,33 +3,72 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
-  const post1 = await prisma.article.upsert({
+  const user1 = await prisma.user.upsert({
+    where: { email: 'xx@mial.com' },
+    update: {},
+    create: {
+      email: 'xx@mial.com',
+      name: 'xx',
+      password: 'xx_pwd'
+    }
+  })
+
+  const user2 = await prisma.user.upsert({
+    where: { email: 'yy@mial.com' },
+    update: {},
+    create: {
+      email: 'yy@mial.com',
+      name: 'yy',
+      password: 'yy_pwd'
+    }
+  })
+
+  console.log({ user1, user2 })
+
+  const article1 = await prisma.article.upsert({
     where: {
       title: 'Prisma adds support for MongoDB',
     },
-    update: {},
+    update: {
+      authorId: user1.id
+    },
     create: {
       title: 'Prisma adds support for MongoDB',
       body: 'Support for MongoDB has been one of the most requested features since the initial release of...',
       description:
         'We are excited to share that today\'s Prisma ORM release adds stable support for MongoDB!',
       published: false,
+      authorId: user1.id
     },
   })
 
-  const post2 = await prisma.article.upsert({
+  const article2 = await prisma.article.upsert({
     where: { title: 'What\'s new in Prisma? (Q1/22)' },
-    update: {},
+    update: {
+      authorId: user2.id
+    },
     create: {
       title: 'What\'s new in Prisma? (Q1/22)',
       body: 'Our engineers have been working hard, issuing new releases with many improvements...',
       description:
         'Learn about everything in the Prisma ecosystem and community from January to March 2022.',
       published: true,
+      authorId: user2.id
     },
   })
 
-  console.log({ post1, post2 })
+  const article3 = await prisma.article.upsert({
+    where: { title: 'Prisma Client Just Became a Lot More Flexible' },
+    update: {},
+    create: {
+      title: 'Prisma Client Just Became a Lot More Flexible',
+      body: 'Prisma Client extensions provide a powerful new way to add functionality to Prisma in a type-safe manner...',
+      description: 'This article will explore various ways you can use Prisma Client extensions to add custom functionality to Prisma Client..',
+      published: true,
+    },
+  })
+
+  console.log({ article1, article2, article3 })
 }
 
 main()
